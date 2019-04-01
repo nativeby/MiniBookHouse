@@ -339,6 +339,8 @@ Page({
 
     wx.navigateTo({
       url: url
-    })
+    });
+
   }
+
 })

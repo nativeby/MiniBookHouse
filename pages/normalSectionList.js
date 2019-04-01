@@ -99,15 +99,18 @@ Page({
   },
 
   openThis: function(e) {
-    if (this.data.comType == 'suit') {
-      wx.navigateTo({
-        url: '/pages/details/suit?id=' + e.currentTarget.dataset.id
-      })
+
+    let url = '';
+    if (e.currentTarget.dataset.issuit == '1') {
+      url = '/pages/details/suit?id=' + e.currentTarget.dataset.id;
     } else {
-      wx.navigateTo({
-        url: '/pages/details/goods?id=' + e.currentTarget.dataset.id
-      })
+      url = '/pages/details/goods?id=' + e.currentTarget.dataset.id;
     }
+
+    wx.navigateTo({
+      url: url
+    })
+
   },
 
   getGoodsList: function() {

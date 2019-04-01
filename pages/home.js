@@ -89,14 +89,7 @@ Page({
     });
   },
 
-  openSuit: function(e) {
-    wx.navigateTo({
-      url: '/pages/details/suit?id=' + e.currentTarget.dataset.id
-    });
-  },
-
   openGoods: function(e) {
-
     let url = '';
     if (e.currentTarget.dataset.issuit == '1') {
       url = '/pages/details/suit?id=' + e.currentTarget.dataset.id;

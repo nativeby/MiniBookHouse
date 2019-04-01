@@ -51,7 +51,7 @@
         <view class="more" bindtap="openMoreList" data-comType="suit">查看更多></view>
       </view>
       <view class='bookList'>
-        <view wx:for="{{suitGoodsList}}" wx:key="suitGoodsList" class="item" bindtap="openSuit" data-id="{{item.id}}">
+        <view wx:for="{{suitGoodsList}}" wx:key="suitGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
           <image class="img" src="{{item.img}}" mode="widthFix" style='border:0' />
           <view class="text">
             <view class="n">{{item.name}}</view>
