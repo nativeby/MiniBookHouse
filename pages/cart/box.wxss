@@ -105,7 +105,7 @@
 }
 
 .addressShow {
-  margin-top: 62rpx;
+  margin-top: 70rpx;
   margin-left: 20rpx;
   margin-right: 30rpx;
   font-size: 28rpx;

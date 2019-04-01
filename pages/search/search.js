@@ -90,9 +90,18 @@ Page({
   },
 
   openThis: function(e) {
+
+    let url = '';
+    if (e.currentTarget.dataset.issuit == '1') {
+      url = '/pages/details/suit?id=' + e.currentTarget.dataset.id;
+    } else {
+      url = '/pages/details/goods?id=' + e.currentTarget.dataset.id;
+    }
+
     wx.navigateTo({
-      url: '/pages/details/goods?id=' + e.currentTarget.dataset.id
+      url: url
     })
+    
   },
 
   searchGoodsList: function() {

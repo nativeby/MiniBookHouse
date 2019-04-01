@@ -70,7 +70,7 @@
         <view class="more" bindtap="openMoreList" data-comType="hot">查看更多></view>
       </view>
       <view class='bookList'>
-        <view wx:for="{{hotGoodsList}}" wx:key="hotGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}">
+        <view wx:for="{{hotGoodsList}}" wx:key="hotGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
           <image class="img" src="{{item.img}}" mode="widthFix" />
           <view class="text">
             <view class="n">{{item.name}}</view>
@@ -89,7 +89,7 @@
         <view class="more" bindtap="openMoreList" data-comType="new">查看更多></view>
       </view>
       <view class='bookList'>
-        <view wx:for="{{newGoodsList}}" wx:key="newGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}">
+        <view wx:for="{{newGoodsList}}" wx:key="newGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
           <image class="img" src="{{item.img}}" mode="widthFix" />
           <view class="text">
             <view class="n">{{item.name}}</view>
@@ -108,7 +108,7 @@
         <!-- <view class="more" bindtap="openMoreList" data-comType="best">查看更多></view> -->
       </view>
       <view class='bookList'>
-        <view wx:for="{{bestGoodsList}}" wx:key="bestGoodsList" class="best" bindtap="openGoods" data-id="{{item.id}}">
+        <view wx:for="{{bestGoodsList}}" wx:key="bestGoodsList" class="best" bindtap="openGoods" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
           <image class="img" src="{{item.img}}" mode="aspectFit" />
           <view class="text">
             <view class="n">{{item.name}}</view>

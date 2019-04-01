@@ -2,7 +2,7 @@
 
 <view class='container' style='margin:30rpx 30rpx {{pageBottom}}rpx 30rpx;'>
   <view class='bookList'>
-    <view wx:for="{{goodsList}}" wx:key="goodsList" class="item" bindtap="openThis" data-id="{{item.id}}">
+    <view wx:for="{{goodsList}}" wx:key="goodsList" class="item" bindtap="openThis" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
       <image class="img" src="{{item.img}}" mode="widthFix" />
       <view class="text">
         <view class="n">{{item.name}}</view>
