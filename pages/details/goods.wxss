@@ -1,0 +1,154 @@
+/* pages/detail/goods.wxss */
+@import '../../pages/templates/dataEmptyTemplate.wxss';
+@import '../../pages/home.wxss';
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.up {
+  display: flex;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-justify-content: center;
+}
+
+.up .left {
+  width: 40%;
+  margin-left: 30rpx;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-justify-content: center;
+}
+
+.up .left image {
+  width: 80%;
+  border: 1px solid #ecf0f1;
+  border-radius: 10rpx;
+}
+
+.up .right {
+  width: 60%;
+  border: 1px solid #fff;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  font-size: 28rpx;
+  text-align: left;
+  color: #696969;
+  align-items: baseline;
+}
+
+.down {
+  margin: 30rpx;
+}
+
+.down .contentTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  vertical-align: center;
+  align-items: center;
+  width: 100%;
+  font-size: 34rpx;
+}
+
+.down .contentTop view {
+  width: 15rpx;
+  height: 30rpx;
+  background-color: red;
+  margin-right: 20rpx;
+}
+
+.down .contentTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  vertical-align: center;
+  align-items:center;
+  width: 100%;
+}
+
+.down .contentTitle text {
+  text-align: center;
+  font-size: 34rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.down button {
+  background-color: #fff;
+  color: red;
+  font-size: 24rpx;
+  width: 200rpx;
+  height: 55rpx;
+  margin-top: 20rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #696969;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.imgList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -webkit-display: flex;
+  -webkit-justify-content: center;
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.imgList image {
+  width: 100%;
+}
+
+.bottom-flex {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.bottom-flex button {
+  float: right;
+  background-color: red;
+  color: #fff;
+  width: 25%;
+  font-size: 30rpx;
+  height: 80rpx;
+}
+
+.line {
+  background: #e0e3da;
+  width: 100%;
+  height: 2rpx;
+}
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 2rpx;
+}

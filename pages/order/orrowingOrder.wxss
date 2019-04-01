@@ -1,0 +1,69 @@
+/* pages/order/orrowingOrder.wxss */
+@import '../../pages/templates/dataEmptyTemplate.wxss';
+@import '../../pages/home.wxss';
+
+.orderList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+}
+
+.orderListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: left;
+  width: 100%;
+  font-size: 25rpx;
+  text-align: left;
+  align-items: center;
+  color: #696969;
+  margin: 20rpx 0 20rpx 0;
+}
+
+.orderListItem .goods {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  width: 95%;
+}
+
+.orderListItem .goods image {
+  width: 20%;
+  height: 100%;
+  border: 1px solid #ecf0f1;
+  border-radius: 10rpx;
+}
+
+.orderListItem .goods .text1 {
+  width: 80%;
+}
+
+.orderListItem .goods .text2 {
+  text-align: right;
+  width: 20%;
+  height: 100%;
+  /* background-color: red; */
+  /* padding-left: 30rpx; */
+  text-decoration: line-through;
+}
+
+.orderListItem text {
+  width: 90%;
+  margin: 0 20rpx 20rpx 20rpx;
+}
+
+.line {
+  margin-top: 10rpx;
+  background: #e0e3da;
+  width: 100%;
+  height: 15rpx;
+}

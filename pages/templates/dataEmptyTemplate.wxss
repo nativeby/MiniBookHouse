@@ -1,0 +1,24 @@
+.dataEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  width: 100%;
+  height: 100vmin;
+  background-color: #fff;
+}
+
+.dataEmpty image {
+  width: 50%;
+}
+
+.dataEmpty text {
+  padding-top: 40rpx;
+  font-size: 25rpx;
+  text-align: center;
+  color: #C2C2D4;
+}

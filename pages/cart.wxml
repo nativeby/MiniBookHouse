@@ -1,0 +1,46 @@
+<!--购物车-->
+<view class="empty" wx-if="{{app.cartNum < 1}}">
+    <view class="img">
+        <image src="../static/img/cart-empty.png" style="width:80px;height:80px;" />
+    </view>
+    <view class="text">购物车还是空的</view>
+    <view>
+        <button class="btn" bindtap="goMall">到商城逛逛</button>
+    </view>
+</view>
+<scroll-view
+    scroll-y
+    scroll-with-animation
+    class="list"
+    style="height: 88vh;"
+    wx-if="{{app.cartNum >= 1}}"
+>
+    <view wx:for="{{app.cartList}}" wx:key=""  class="item">
+        <view style="float:left" class="icon" bindtap="selectThis" data-id="{{item.id}}">
+            <image src="{{item.selectStatus}}" style="width:18px;height:18px;" />
+        </view>
+        <view style="float:left" class="img">
+            <image src="{{item.img}}" style="width:30px;height:30px;" />
+        </view>
+        <view style="float:left" class="name">{{item.name}}</view>
+        <view style="float:right" class="price"><span>¥{{item.price}}</span> x {{item.number}}</view>
+    </view>
+</scroll-view>
+<view class="buy"  wx-if="{{app.cartNum >= 1}}">
+    <view style="float:left" class="icon" bindtap="selectAll">
+        <image
+            src="../static/img/cart_goods_0{{selectStatus}}.png"
+            style="width:18px;height:18px;"
+        />
+    </view>
+    <view style="float:left" class="text">全选</view>
+    <view
+        style="float:right"
+        class="total {{active?'active':''}}"
+        bindtap="payThis"
+    >结算({{total}})</view>
+    <view
+        style="float:right"
+        class="sum"
+    >合计:<span class="{{active?'active':''}}">¥{{sum}}</span></view>
+</view>

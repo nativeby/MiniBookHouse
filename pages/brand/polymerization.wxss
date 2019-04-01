@@ -1,0 +1,78 @@
+/* pages/brand/polymerization.wxss */
+@import '../../pages/templates/dataEmptyTemplate.wxss';
+@import '../../pages/home.wxss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+}
+
+.listItemTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.listItemTitle .logoImage {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  border: 1px solid gainsboro;
+  margin-right: 30rpx;
+}
+
+.listItemTitle .rightImage {
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 10rpx;
+}
+
+.textView {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: left;
+  width: 70%;
+}
+
+.textView text {
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding-top: 5rpx;
+}
+
+.bookItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  height: 420rpx;
+}

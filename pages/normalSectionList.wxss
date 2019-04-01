@@ -1,0 +1,2 @@
+/* pages/normalSectionList.wxss */
+@import '../pages/home.wxss';

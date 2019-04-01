@@ -1,0 +1,17 @@
+<view class='container' style='margin:30rpx 30rpx {{pageBottom}}rpx 30rpx;'>
+  <view class='bookList'>
+    <view wx:for="{{goodsList}}" wx:key="goodsList" class="item" bindtap="openThis" data-id="{{item.id}}">
+      <image class="img" src="{{item.img}}" mode="widthFix" />
+      <view class="text">
+        <view class="n">{{item.name}}</view>
+        <view class="d">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="clear"></view>
+  <view wx:if="{{pageEnd}}" class="end-page">
+    <view>------</view>
+    <view style="margin: 0rpx 20rpx;">到底了</view>
+    <view>------</view>
+  </view>
+</view>

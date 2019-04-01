@@ -1,0 +1,83 @@
+/* pages/detail/single.wxss */
+@import '../../pages/templates/dataEmptyTemplate.wxss';
+@import '../../pages/home.wxss';
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.up {
+  display: flex;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-justify-content: center;
+}
+
+.up .left {
+  width: 40%;
+  margin-left: 30rpx;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-justify-content: center;
+}
+
+.up .left image {
+  width: 80%;
+  border: 1px solid #ecf0f1;
+  border-radius: 10rpx;
+}
+
+.up .right {
+  width: 60%;
+  border: 1px solid #fff;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  font-size: 28rpx;
+  text-align: center;
+  color: #696969;
+  align-items: baseline;
+}
+
+.down {
+  margin: 30rpx;
+}
+
+.down button {
+  background-color: #fff;
+  color: red;
+  font-size: 24rpx;
+  width: 200rpx;
+  height: 55rpx;
+  margin-top: 20rpx;
+}
+
+.bottom-flex {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.bottom-flex button {
+  float: right;
+  background-color: red;
+  color: #fff;
+  width: 25%;
+  font-size: 30rpx;
+  height: 80rpx;
+}
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 2rpx;
+}

@@ -1,0 +1,44 @@
+@import '../pages/home.wxss';
+@import '../pages/templates/dataEmptyTemplate.wxss';
+
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  width: 100%;
+}
+
+.category .group {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  justify-content: left;
+  align-items: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-white-space: nowrap;
+  -webkit-justify-content: left;
+  /* margin-bottom: 20rpx; */
+  padding-bottom: 20rpx;
+}
+
+.category .item-normal {
+  font-size: 24rpx;
+  text-align: center;
+  color: #696969;
+  padding: 10rpx;
+  background-color: white;
+}
+
+.category .item-selected {
+  font-size: 24rpx;
+  text-align: center;
+  color: white;
+  padding: 10rpx;
+  background-color: #ff6500;
+  border-radius: 12rpx;
+}

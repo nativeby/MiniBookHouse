@@ -1,0 +1,54 @@
+<!--pages/cart/box.wxml-->
+<import src='../../pages/templates/dataEmptyTemplate.wxml' />
+
+<view class="container">
+  <scroll-view scroll-y class='scroll' style="height: {{scrollViewHeight}}px;">
+    <view class='box'>
+      <view wx:if='{{isValid == 0}}' class='joinMembership'>
+        <text>支付押金享无限借阅</text>
+        <view class='button' bindtap='payment'>支付押金</view>
+      </view>
+      <view wx:else class='membership'>
+        <text>会员等级：{{level}}</text>
+        <text>有效期至：{{vipDateTo}}</text>
+      </view>
+      <view class='address' bindtap='selectAddress'>
+        <text class="addressTip" wx:if='{{selectedAddress.name.length == 0}}'>选择地址</text>
+        <text class="addressShow" wx:else>{{selectedAddress.name}}\n{{selectedAddress.biztime}}\n{{selectedAddress.address}}</text>
+        <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
+      </view>
+      <view class='boxList'>
+        <view class='boxItem' wx:for='{{boxList}}' wx:key='boxList'>
+          <view class='one' bindtap='selectBook' data-index='{{index}}'>
+            <image wx:if='{{item.selected}}' class='itemSelected' src='/static/img/cart_goods_02.png' mode='aspectFit' />
+            <image wx:else='itemUnSelected' class='itemSelected' src='/static/img/cart_goods_01.png' mode='aspectFit' />
+          </view>
+          <view class='two'>
+            <image src='{{item.img}}' mode='widthFix' />
+          </view>
+          <view class='three'>{{item.name}}</view>
+          <view class='four' bindtap='deleteBook' data-id='{{item.id}}' data-index='{{index}}'>
+            <image src='/static/img/btn_delete.png' mode='aspectFit' style='height:50rpx;' />
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 分割线 -->
+  <view wx:if='{{boxList.length == 0}}' style='margin-top:120rpx;'>
+    <template is="dataEmpty" />
+  </view>
+  <view wx:else class='bottom-flex' style='bottom:{{pageBottom}}rpx'>
+    <view class="divLine"></view>
+    <view class='content'>
+      <image wx:if='{{selectedAll}}' class='itemSelected' style='margin-left: 30rpx;' src='/static/img/cart_goods_02.png' mode='aspectFit' bindtap='selectAllBook' />
+      <image wx:else='itemUnSelected' class='itemSelected' style='margin-left: 30rpx;' src='/static/img/cart_goods_01.png' mode='aspectFit' bindtap='selectAllBook' />
+      <text>全选</text>
+      <text>已选{{selectedCount}}本</text>
+      <text>合计节省</text>
+      <text style='color:#696969;text-decoration:line-through;'>{{totalPrice}}</text>
+      <button bindtap='createOrder'>提交订单</button>
+    </view>
+  </view>
+
+</view>

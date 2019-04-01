@@ -1,0 +1,6 @@
+<template name="dataEmpty">
+  <view class='dataEmpty'>
+    <image src='/static/img/bg_empty.png' mode='widthFix'></image>
+    <text>这里空空如也~</text>
+  </view>
+</template>

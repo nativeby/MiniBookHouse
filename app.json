@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/home",
+    "pages/category",
+    "pages/cart",
+    "pages/user",
+    "pages/cart/balance",
+    "pages/user/order",
+    "pages/user/address",
+    "pages/user/contact",
+    "pages/user/about",
+    "pages/common/auth",
+    "pages/normalSectionList",
+    "pages/search/search",
+    "pages/details/goods",
+    "pages/details/suit",
+    "pages/brand/polymerization",
+    "pages/brand/introduction",
+    "pages/cart/box",
+    "pages/cart/address",
+    "pages/authorize",
+    "pages/order/orrowingOrder",
+    "pages/order/returnOrder",
+    "pages/common/contactInfo",
+    "pages/payment/paymentHome"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "小星辰绘本",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#727272",
+    "selectedColor": "#ff6600",
+    "list": [
+      {
+        "pagePath": "pages/home",
+        "text": "首页",
+        "iconPath": "/static/img/home_01.png",
+        "selectedIconPath": "/static/img/home_02.png"
+      },
+      {
+        "pagePath": "pages/category",
+        "text": "分类",
+        "iconPath": "/static/img/category_01.png",
+        "selectedIconPath": "/static/img/category_02.png"
+      },
+      {
+        "pagePath": "pages/cart/box",
+        "text": "书包",
+        "iconPath": "/static/img/cart_01.png",
+        "selectedIconPath": "/static/img/cart_02.png"
+      },
+      {
+        "pagePath": "pages/user",
+        "text": "我的",
+        "iconPath": "/static/img/user_01.png",
+        "selectedIconPath": "/static/img/user_02.png"
+      }
+    ]
+  }
+}

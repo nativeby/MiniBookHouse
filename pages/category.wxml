@@ -1,0 +1,41 @@
+<!--分类页-->
+<import src='../pages/templates/dataEmptyTemplate.wxml' />
+
+<view class='container' style='margin:30rpx 30rpx {{pageBottom}}rpx 30rpx;'>
+  <view class='category'>
+    <scroll-view scroll-x scroll-into-view='{{toAgeItem}}'>
+      <view class='group'>
+        <view id='a{{item.id}}' class='{{(item.selected) ? "item-selected" : "item-normal"}}' wx:for='{{ageItems}}' wx:key='ageItems' data-id='{{item.id}}' data-pid='0' data-index='{{index}}' bindtap='filterTap'>{{item.name}}</view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-x scroll-into-view='{{toLanguageItem}}'>
+      <view class='group'>
+        <view id='l{{item.id}}' class='{{(item.selected) ? "item-selected" : "item-normal"}}' wx:for='{{languageItems}}' wx:key='languageItems' data-id='{{item.id}}' data-pid='1' data-index='{{index}}' bindtap='filterTap'>{{item.name}}</view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-x scroll-into-view='{{toCategoryItem}}'>
+      <view class='group'>
+        <view id='c{{item.id}}' class='{{(item.selected) ? "item-selected" : "item-normal"}}' wx:for='{{categoryItems}}' wx:key='categoryItems' data-id='{{item.id}}' data-pid='2' data-index='{{index}}' bindtap='filterTap'>{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='bookList'>
+    <view wx:for="{{goodsList}}" wx:key="goodsList" class="item" bindtap="openThis" data-id="{{item.id}}" data-issuit="{{item.is_suit}}">
+      <image class="img" src="{{item.img}}" mode="widthFix" />
+      <view class="text">
+        <view class="n">{{item.name}}</view>
+        <view class="d">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="clear"></view> -->
+  <view wx:if="{{pageEmpty}}" class="empty">
+    <template is="dataEmpty" />
+  </view>
+  <view class="clear"></view>
+  <view wx:if="{{pageEnd}}" class="end-page">
+    <view>------</view>
+    <view style="margin: 0rpx 20rpx;">到底了</view>
+    <view>------</view>
+  </view>
+</view>

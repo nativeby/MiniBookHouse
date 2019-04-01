@@ -1,0 +1,8 @@
+<!--pages/common/contactInfo.wxml-->
+
+<view class='contactInfo'>
+  <view>
+    <text>微信：{{wechat}}</text>
+    <text bindtap='call'>手号：{{mobile}}</text>
+  </view>
+</view>

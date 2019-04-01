@@ -1,0 +1,129 @@
+<!--首页-->
+<view class='container'>
+
+  <view class="search">
+    <image src="/static/img/bg_search.png" mode="aspectFit" />
+    <input placeholder="搜索图书" type="search" bindconfirm="bindKeyConfirm" />
+  </view>
+  <scroll-view scroll-y class='scroll' style="height: {{scrollViewHeight}}px">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:100%;height:{{imageHeight}}px;">
+      <block wx:for="{{slideshow}}" wx:key="" class="swiper">
+        <swiper-item bindtap="openThis">
+          <image src="{{item.img}}" model="aspectFit" style="width:100%;height:{{imageHeight}}px" bindload="imageLoad" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 专栏 -->
+    <view wx:if="{{brand.length > 0}}" style="margin:30rpx;">
+      <view wx:for="{{brand}}" wx:key="" class="zhuanlan" bindtap="openPolymerization" data-id="{{item.id}}">
+        <image class="img" src="{{item.logo}}" mode='aspectFit' />
+        <view class="text">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+
+    <!-- 带图标分类 -->
+    <view wx:if="{{age.length > 0}}" style="margin:30rpx;">
+      <view wx:for="{{age}}" wx:key="" class="zhuanlan" bindtap="openCategory" data-id="{{item.id}}" data-pid='0' data-index='{{index}}'>
+        <image class="img" src="{{item.logo}}" mode='aspectFit' />
+        <view class="text">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+
+    <!-- 不带图标分类 -->
+    <view wx:if="{{goods.length > 0}}" style="margin:30rpx 30rpx 30rpx 30rpx;">
+      <view wx:for="{{goods}}" wx:key="" class="cat" bindtap="openCategory" data-id="{{item.id}}" data-pid='2' data-index='{{index}}'>
+        <view class="text">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+    <view class="dividing-line" style="margin-top: 60rpx;"></view>
+
+    <!-- 套装推荐 -->
+    <view wx:if="{{suitGoodsList.length > 0}}" style="margin:30rpx 30rpx 30rpx 30rpx;">
+      <view class="biaoti">
+        <view>套装推荐</view>
+        <view class="more" bindtap="openMoreList" data-comType="suit">查看更多></view>
+      </view>
+      <view class='bookList'>
+        <view wx:for="{{suitGoodsList}}" wx:key="suitGoodsList" class="item" bindtap="openSuit" data-id="{{item.id}}">
+          <image class="img" src="{{item.img}}" mode="widthFix" style='border:0' />
+          <view class="text">
+            <view class="n">{{item.name}}</view>
+            <view class="d">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+
+    <!-- 热门图书 -->
+    <view wx:if="{{hotGoodsList.length > 0}}" style="margin:30rpx 30rpx 30rpx 30rpx;">
+      <view class="biaoti">
+        <view>热门图书</view>
+        <view class="more" bindtap="openMoreList" data-comType="hot">查看更多></view>
+      </view>
+      <view class='bookList'>
+        <view wx:for="{{hotGoodsList}}" wx:key="hotGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}">
+          <image class="img" src="{{item.img}}" mode="widthFix" />
+          <view class="text">
+            <view class="n">{{item.name}}</view>
+            <view class="d">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+
+    <!-- 新到图书 -->
+    <view wx:if="{{newGoodsList.length > 0}}" style="margin:30rpx 30rpx 30rpx 30rpx;">
+      <view class="biaoti">
+        <view>新到图书</view>
+        <view class="more" bindtap="openMoreList" data-comType="new">查看更多></view>
+      </view>
+      <view class='bookList'>
+        <view wx:for="{{newGoodsList}}" wx:key="newGoodsList" class="item" bindtap="openGoods" data-id="{{item.id}}">
+          <image class="img" src="{{item.img}}" mode="widthFix" />
+          <view class="text">
+            <view class="n">{{item.name}}</view>
+            <view class="d">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+
+    <!-- 精品推荐 -->
+    <view wx:if="{{bestGoodsList.length > 0}}" style="margin:30rpx 30rpx 30rpx 30rpx;">
+      <view class="biaoti-center">
+        <view>精品推荐</view>
+        <!-- <view class="more" bindtap="openMoreList" data-comType="best">查看更多></view> -->
+      </view>
+      <view class='bookList'>
+        <view wx:for="{{bestGoodsList}}" wx:key="bestGoodsList" class="best" bindtap="openGoods" data-id="{{item.id}}">
+          <image class="img" src="{{item.img}}" mode="aspectFit" />
+          <view class="text">
+            <view class="n">{{item.name}}</view>
+            <view class="d">{{item.desc}}</view>
+          </view>
+          <view class="price">{{item.sell_price}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="clear"></view>
+    <view class="end-page">
+      <view>------</view>
+      <view style="margin: 0rpx 20rpx;">到底了</view>
+      <view>------</view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/brand/polymerization.wxml-->
+<import src='../../pages/templates/dataEmptyTemplate.wxml' />
+<view class="container" style='margin:30rpx 30rpx {{pageBottom}}rpx 30rpx;'>
+  <view class='list'>
+    <view wx:for="{{list}}" wx:key="list" class="listItem">
+      <view class="listItemTitle" bindtap='openIntroduction' data-id="{{item.id}}">
+        <image class='logoImage' src="{{item.logo}}" mode="aspectFit" />
+        <view class='textView'>
+          <text>{{item.name}}</text>
+          <text style='color: #696969;'>{{item.description}}</text>
+        </view>
+        <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
+      </view>
+      <view class='bookItem'>
+        <view wx:for="{{item.goodsList}}" wx:key="goodsList" wx:for-item="bookItem" class="item" bindtap="openGoods" data-id="{{bookItem.id}}">
+          <image class="img" src="{{bookItem.img}}" mode="widthFix" />
+          <view class="text">
+            <view class="n">{{bookItem.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="dividing-line" style="margin-bottom: 30rpx;"></view>
+    </view>
+  </view>
+  <view wx:if="{{pageEmpty}}" class="empty">
+    <template is="dataEmpty" />
+  </view>
+  <view wx:if="{{pageEnd}}" class="end-page">
+    <view>------</view>
+    <view style="margin: 0rpx 20rpx;">到底了</view>
+    <view>------</view>
+  </view>
+</view>

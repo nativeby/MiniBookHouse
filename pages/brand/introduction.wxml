@@ -1,0 +1,36 @@
+<!--pages/brand/introduction.wxml-->
+<import src='../../pages/templates/dataEmptyTemplate.wxml' />
+<view class="container" style='margin:30rpx 0rpx {{pageBottom}}rpx 0rpx;'>
+  <view class='list'>
+    <view class="brandDetailTitle">
+      <view>
+        <image class='bgImage' src="{{brandDetail.background_img}}" mode="aspectFill" style='width: {{imageWidth}}px;height:{{imageHeight}}px;' />
+        <image class='logoImage' src="{{brandDetail.logo}}" mode="aspectFit" />
+      </view>
+      <text style='margin: 120rpx 30rpx 0rpx 30rpx;font-size: 40rpx;'>{{brandDetail.name}}</text>
+      <text style='margin: 0rpx 30rpx 50rpx 30rpx;font-size: 30rpx;'>相关作品：{{brandDetail.goodsCount}}本</text>
+    </view>
+    <view class='description'>
+      <rich-text>{{brandDetail.description}}</rich-text>
+    </view>
+    <view class="dividing-line" style="margin:30rpx 0rpx 30rpx 0rpx;"></view>
+    <view class='bookItem'>
+      <view class='bookList'>
+        <view wx:for="{{goodsList}}" wx:key="goodsList" wx:for-item="bookItem" class="best" bindtap="openGoods" data-id="{{bookItem.id}}">
+          <image class="img" src="{{bookItem.img}}" mode="widthFix" />
+          <view class="text">
+            <view class="n">{{bookItem.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{pageEmpty}}" class="empty">
+  <template is="dataEmpty" />
+</view>
+<view wx:if="{{pageEnd}}" class="end-page">
+  <view>------</view>
+  <view style="margin: 0rpx 20rpx;">到底了</view>
+  <view>------</view>
+</view>

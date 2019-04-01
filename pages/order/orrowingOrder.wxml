@@ -1,0 +1,29 @@
+<!--pages/order/orrowingOrder.wxml-->
+<import src='../../pages/templates/dataEmptyTemplate.wxml' />
+<view class="container" style='margin:30rpx 0rpx {{pageBottom}}rpx 0rpx;'>
+  <view class='orderList'>
+    <view wx:for="{{orderList}}" wx:key="orderList" class="orderListItem">
+      <text>订单编号：{{item.order_no}}</text>
+      <text>自提点：{{item.address}}</text>
+      <text>创建时间：{{item.create_time}}</text>
+      <text>订单状态：{{item.status_txt}}</text>
+      <text>绘本：</text>
+      <block wx:for="{{item.goods_info}}" wx:key="subList" wx:for-index="subIndex" wx:for-item="subItem">
+        <view class='goods'>
+          <text class='text1'>《{{subItem.goods_name}}》</text>
+          <text class='text2'>{{subItem.goods_price}}</text>
+        </view>
+      </block>
+      <view class='line'></view>
+    </view>
+  </view>
+  <view wx:if="{{pageEmpty}}" class="empty">
+    <template is="dataEmpty" />
+  </view>
+  <view class="clear"></view>
+  <view wx:if="{{pageEnd}}" class="end-page">
+    <view>------</view>
+    <view style="margin: 0rpx 20rpx;">到底了</view>
+    <view>------</view>
+  </view>
+</view>

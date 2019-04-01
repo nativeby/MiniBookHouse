@@ -1,0 +1,60 @@
+/* pages/user.wxss */
+
+page {
+  background-color: #ebebeb;
+}
+
+.userInfo {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  align-items: center;
+}
+
+.userInfo image {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.userInfo text {
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+  color: #696969;
+}
+
+.list {
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.list > .item {
+  border-bottom: 1px solid #ebebeb;
+  padding-left: 20px;
+  height: 45px;
+}
+
+.list > .item image {
+  padding-top: 10px;
+}
+
+.list > .item > .t {
+  font-size: 28rpx;
+  color: #696969;
+  line-height: 45px;
+  padding-left: 10px;
+}
+
+.rightImage {
+  position: absolute;
+  right: 30rpx;
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 15rpx;
+}

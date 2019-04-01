@@ -1,0 +1,39 @@
+<!-- pages/detail/single.wxml -->
+<view class="container">
+  <scroll-view scroll-y class='scroll' style="height: {{scrollViewHeight}}px;">
+    <view class="up">
+      <view class="left">
+        <image src="{{summary.img}}" mode='widthFix'></image>
+      </view>
+      <view class="right">
+        <view>{{summary.name}}</view>
+        <view>作者：{{summary.author}}</view>
+        <view>出版社：{{summary.press}}</view>
+        <view>语言：{{summary.language}}</view>
+        <view>年龄：{{summary.age}}</view>
+        <view>分类：{{summary.category}}</view>
+      </view>
+    </view>
+
+    <view class="dividing-line" style="margin-top: 40rpx;"></view>
+    <view class="down">
+      <view class='biaoti'>套装目录（共{{goodsCount}}本）</view>
+      <view class='bookList'>
+        <view wx:for="{{goodsList}}" wx:key="goodsList" class="item" data-id="{{item.id}}" style='padding-bottom: 30rpx;' catchtap="openGoods">
+          <image class="img" src="{{item.img}}" mode="widthFix" />
+          <view class="text">
+            <view class="n">{{item.name}}</view>
+          </view>
+          <button class='button' catchtap='addToBox' data-id='{{item.id}}'>加入书包</button>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+  <!-- 分割线 -->
+  <view class='bottom-flex' style='bottom:{{pageBottom}}rpx'>
+    <view class="divLine"></view>
+    <button bindtap='openBox'>打开书包</button>
+  </view>
+
+</view>

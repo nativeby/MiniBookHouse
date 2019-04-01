@@ -1,0 +1,25 @@
+/* pages/authorize.wxss */
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo image {
+  width: 400rpx;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #696969;
+  margin: 50rpx 50rpx 50rpx 50rpx;
+}
+
+button {
+  margin: 50rpx 50rpx 50rpx 50rpx;
+}

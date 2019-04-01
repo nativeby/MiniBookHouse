@@ -1,0 +1,59 @@
+<!--pages/detail/goods.wxml-->
+<view class="container">
+  <scroll-view scroll-y class='scroll' style="height: {{scrollViewHeight}}px;">
+    <view class="up">
+      <view class="left">
+        <image src="{{goodsInfo.img}}" mode='widthFix'></image>
+      </view>
+      <view class="right">
+        <view>{{goodsInfo.name}}</view>
+        <view>作者名：{{goodsInfo.author}}</view>
+        <view>出版社：{{goodsInfo.press}}</view>
+        <view>
+          <text space="nbsp">语   言：{{goodsInfo.language}}</text>
+        </view>
+        <view>
+          <text space="nbsp">年   龄：{{goodsInfo.age}}</text>
+        </view>
+        <view>
+          <text space="nbsp">分   类：{{goodsInfo.category}}</text>
+        </view>
+        <view>
+          <text space="nbsp">价   格：</text>
+          <text style='text-decoration:line-through;'>{{goodsInfo.sell_price}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="dividing-line" style="margin-top: 40rpx;"></view>
+    <view class="down">
+      <view class="contentTop">
+        <view></view>
+        <text>图文详情</text>
+      </view>
+      <view class="contentTitle">
+        <view class="line"></view>
+        <text>【内容简介】</text>
+        <view class="line"></view>
+      </view>
+      <view class='content'>
+        <rich-text nodes="{{goodsInfo.content}}"></rich-text>
+      </view>
+      <view class="contentTitle">
+        <view class="line"></view>
+        <text>【内容详情】</text>
+        <view class="line"></view>
+      </view>
+      <view class='imgList' wx:for="{{goodsInfo.img_list}}" wx:key="img_list">
+        <image src='{{item}}' mode='widthFix'></image>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 分割线 -->
+  <view class='bottom-flex' style='bottom:{{pageBottom}}rpx'>
+    <view class="divLine"></view>
+    <button bindtap='openBox'>打开书包</button>
+    <button bindtap='addToBox' style='background-color: #ff6500;margin-right: 20rpx;'>加入书包</button>
+  </view>
+
+</view>
