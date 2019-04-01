@@ -35,7 +35,7 @@ Page({
     }
 
     let uid = wx.getStorageSync('loginUserInfo').id;
-    if (!uid) {
+    if (!uid || uid.length == 0) {
       wx.redirectTo({
         url: '/pages/authorize'
       })

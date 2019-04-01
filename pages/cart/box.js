@@ -19,7 +19,7 @@ Page({
       id: '',
       name: '',
       address: '',
-      biztime:'',
+      biztime: '',
     },
     boxList: [],
     selectedBoxList: [],
@@ -66,7 +66,7 @@ Page({
     }
 
     let uid = wx.getStorageSync('loginUserInfo').id;
-    if (!uid) {
+    if (!uid || uid.length == 0) {
       wx.redirectTo({
         url: '/pages/authorize'
       })
@@ -296,10 +296,6 @@ Page({
           var boxList = _this.data.boxList;
           boxList.splice(bookIndex, 1);
 
-          // _this.setData({
-          //   boxList: boxList
-          // });
-
           var totalPrice = parseFloat(0);
           var selectedCount = 0;
           var selected = false;
@@ -364,12 +360,14 @@ Page({
         title: '请至少选择1本图书',
         icon: 'none'
       });
+      return;
     } else if (_this.data.selectedCount > _this.data.maxBorrowBooks) {
       let count = _this.data.maxBorrowBooks;
       wx.showToast({
         title: '最多选择' + count + '本图书',
         icon: 'none'
       });
+      return;
     } else {
       for (let i = 0; i < _this.data.boxList.length; i++) {
         if (_this.data.boxList[i].selected) {
@@ -380,9 +378,14 @@ Page({
 
       let gid = _this.data.selectedBoxList.toString();
 
-      console.log('gid: ' + gid);
-      console.log('selectedBoxList: ' + _this.data.selectedBoxList);
-      console.log('selectedIndexList: ' + _this.data.selectedIndexList);
+      if (gid.length == 0) {
+        wx.showToast({
+          title: '选择图书个数为0',
+          icon: 'none'
+        });
+
+        return;
+      }
 
       if (uid.length > 0 && aid.length > 0 && gid.length > 0) {
         wx.showNavigationBarLoading();
@@ -395,8 +398,6 @@ Page({
             gid: gid
           },
           success(res) {
-
-            console.log(res.data);
 
             var boxList = _this.data.boxList;
             if (res.data.code == 200) {
@@ -419,10 +420,6 @@ Page({
                   }
                 }
               }
-
-              console.log('selectedCount: ' + _this.data.selectedCount);
-              console.log(app.globalData.box);
-              console.log(newBoxList);
 
               _this.setData({
                 selectedCount: _this.data.selectedCount,
