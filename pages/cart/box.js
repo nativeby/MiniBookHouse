@@ -346,9 +346,17 @@ Page({
       return;
     }
 
+    if (uid.length == 0) {
+      wx.redirectTo({
+        url: '/pages/authorize'
+      })
+
+      return;
+    }
+
     if (aid.length == 0) {
       wx.showToast({
-        title: '请选择地址',
+        title: '请选择地址~',
         icon: 'none'
       });
 
@@ -357,100 +365,95 @@ Page({
 
     if (_this.data.selectedCount == 0) {
       wx.showToast({
-        title: '请至少选择1本图书',
+        title: '请至少选择1本图书~',
         icon: 'none'
       });
       return;
-    } else if (_this.data.selectedCount > _this.data.maxBorrowBooks) {
+    } 
+    
+    if (_this.data.selectedCount > _this.data.maxBorrowBooks) {
       let count = _this.data.maxBorrowBooks;
       wx.showToast({
-        title: '最多选择' + count + '本图书',
+        title: '最多选择' + count + '本图书~',
         icon: 'none'
       });
       return;
-    } else {
-      for (let i = 0; i < _this.data.boxList.length; i++) {
-        if (_this.data.boxList[i].selected) {
-          _this.data.selectedBoxList.push(_this.data.boxList[i].id);
-          _this.data.selectedIndexList.push(i);
-        }
+    } 
+    
+    for (let i = 0; i < _this.data.boxList.length; i++) {
+      if (_this.data.boxList[i].selected) {
+        _this.data.selectedBoxList.push(_this.data.boxList[i].id);
+        _this.data.selectedIndexList.push(i);
       }
-
-      let gid = _this.data.selectedBoxList.toString();
-
-      if (gid.length == 0) {
-        wx.showToast({
-          title: '选择图书个数为0',
-          icon: 'none'
-        });
-
-        return;
-      }
-
-      if (uid.length > 0 && aid.length > 0 && gid.length > 0) {
-        wx.showNavigationBarLoading();
-        wx.request({
-          url: app.globalData.baseApi + "outer/createOrder",
-          method: "GET",
-          data: {
-            uid: uid,
-            aid: aid,
-            gid: gid
-          },
-          success(res) {
-
-            var boxList = _this.data.boxList;
-            if (res.data.code == 200) {
-              for (let i = 0; i < _this.data.selectedBoxList.length; i++) {
-                let id = _this.data.selectedBoxList[i];
-                let index = app.globalData.box.indexOf(id);
-
-                app.globalData.box.splice(index, 1);
-
-                wx.setStorageSync('box', app.globalData.box);
-
-                _this.data.selectedCount -= 1;
-              }
-
-              var newBoxList = [];
-              for (let i = 0; i < app.globalData.box.length; i++) {
-                for (let j = 0; j < boxList.length; j++) {
-                  if (app.globalData.box[i] == boxList[j].id) {
-                    newBoxList.push(boxList[j]);
-                  }
-                }
-              }
-
-              _this.setData({
-                selectedCount: _this.data.selectedCount,
-                boxList: newBoxList
-              });
-
-              wx.showToast({
-                title: '订单已提交'
-              });
-            } else {
-              wx.showToast({
-                title: res.data.msg,
-                icon: 'none'
-              });
-            }
-          },
-          fail(res) {
-            console.log(res);
-          },
-          complete() {
-            wx.hideNavigationBarLoading();
-            wx.stopPullDownRefresh();
-          }
-        });
-      } else {
-        wx.showToast({
-          title: '无法创建订单',
-          icon: 'none'
-        });
-      }
-
     }
+
+    let gid = _this.data.selectedBoxList.toString();
+
+    if (gid.length == 0) {
+      wx.showToast({
+        title: '请重新选择图书~',
+        icon: 'none'
+      });
+      return;
+    }
+
+    wx.showNavigationBarLoading();
+    wx.request({
+      url: app.globalData.baseApi + "outer/createOrder",
+      method: "GET",
+      data: {
+        uid: uid,
+        aid: aid,
+        gid: gid
+      },
+      success(res) {
+
+        var boxList = _this.data.boxList;
+        if (res.data.code == 200) {
+          for (let i = 0; i < _this.data.selectedBoxList.length; i++) {
+            let id = _this.data.selectedBoxList[i];
+            let index = app.globalData.box.indexOf(id);
+
+            app.globalData.box.splice(index, 1);
+
+            wx.setStorageSync('box', app.globalData.box);
+
+            _this.data.selectedCount -= 1;
+          }
+
+          var newBoxList = [];
+          for (let i = 0; i < app.globalData.box.length; i++) {
+            for (let j = 0; j < boxList.length; j++) {
+              if (app.globalData.box[i] == boxList[j].id) {
+                newBoxList.push(boxList[j]);
+              }
+            }
+          }
+
+          _this.setData({
+            selectedCount: _this.data.selectedCount,
+            boxList: newBoxList
+          });
+
+          wx.showToast({
+            title: '订单已提交~'
+          });
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          });
+        }
+      },
+      fail(res) {
+        console.log(res);
+      },
+      complete() {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+      }
+    });
+
   }
+
 })
