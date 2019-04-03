@@ -64,7 +64,7 @@
   -webkit-justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgb(247, 236, 176);
+  background-color: #cb8cc5;
   padding-top: 30rpx;
   padding-bottom: 30rpx;
 }
@@ -85,7 +85,7 @@
   -webkit-flex-direction: row;
   -webkit-justify-content: left;
   width: 100%;
-  min-height: 85rpx;
+  min-height: 80rpx;
   align-items: center;
 }
 
@@ -96,12 +96,13 @@
   -webkit-display: flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
-  max-width: 90%;
+  max-width: 95%;
+  /* margin-top: 20rpx; */
 }
 
 .address text {
-  margin-left: 30rpx;
-  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
   font-size: 28rpx;
   color: #696969;
 }
@@ -134,8 +135,7 @@
   align-items: center;
   font-size: 28rpx;
   color: #696969;
-  /* background-color: yellow; *//* height: 200rpx; */
-  margin-top: 70rpx;
+  margin-top: 20rpx;
 }
 
 .boxList .boxItem .one {
