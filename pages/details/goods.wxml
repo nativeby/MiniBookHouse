@@ -3,6 +3,7 @@
   <scroll-view scroll-y class='scroll' style="height: {{scrollViewHeight}}px;">
     <view class="up">
       <view class="left">
+        <view wx:if="{{goodsInfo.store_nums == '0'}}" class="empty">已借完</view>
         <image src="{{goodsInfo.img}}" mode='widthFix'></image>
       </view>
       <view class="right">

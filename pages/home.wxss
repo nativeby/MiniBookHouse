@@ -88,7 +88,7 @@
 
 .item .img {
   width: 100%;
-  border: 1px solid #ECF0F1;
+  border: 1px solid #ecf0f1;
   border-radius: 10rpx;
 }
 

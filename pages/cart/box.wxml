@@ -13,8 +13,12 @@
         <text>有效期至：{{vipDateTo}}</text>
       </view>
       <view class='address' bindtap='selectAddress'>
-        <text class="addressTip" wx:if='{{selectedAddress.name.length == 0}}'>选择地址</text>
-        <text class="addressShow" wx:else>{{selectedAddress.name}}\n{{selectedAddress.biztime}}\n{{selectedAddress.address}}</text>
+        <text wx:if='{{selectedAddress.name.length == 0}}'>选择地址</text>
+        <view wx:else>
+          <text>{{selectedAddress.name}}</text>
+          <text>{{selectedAddress.bizTime}}</text>
+          <text>{{selectedAddress.address}}</text>
+        </view>
         <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
       </view>
       <view class='boxList'>

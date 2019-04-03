@@ -2,7 +2,7 @@
 <import src='../../pages/templates/dataEmptyTemplate.wxml' />
 <view class="container" style='margin:30rpx 30rpx {{pageBottom}}rpx 30rpx;'>
   <view class='takeSelfList'>
-    <view wx:for="{{takeSelfList}}" wx:key="takeSelfList" class="takeSelfListItem" data-id='{{item.id}}' data-name='{{item.name}}' data-address='{{item.address}}' data-biztime='{{item.biz_time}}' bindtap='selectAddress'>
+    <view wx:for="{{takeSelfList}}" wx:key="takeSelfList" class="takeSelfListItem" data-id='{{item.id}}' data-name='{{item.name}}' data-biztime='{{item.biz_time}}' data-address='{{item.address}}' bindtap='selectAddress'>
       <!-- <text style='font-size: 30rpx;'>{{item.name}}</text> -->
       <text>{{item.name}}</text>
       <text>{{item.biz_time}}</text>

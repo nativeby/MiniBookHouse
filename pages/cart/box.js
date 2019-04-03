@@ -155,8 +155,6 @@ Page({
       success(res) {
         if (res.data.code == 200) {
 
-          console.log(res.data.data.result);
-
           _this.setData({
             level: res.data.data.result.level,
             maxBorrowBooks: res.data.data.result.max_borrow_books,

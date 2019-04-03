@@ -123,11 +123,18 @@ Page({
   },
 
   addToBox: function(e) {
-    app.globalData.reloadBox = true;
-    app.globalData.box.push(e.currentTarget.dataset.id);
-    wx.setStorageSync('box', app.globalData.box);
-    wx.showToast({
-      title: '已加入书包'
-    });
+    if (e.currentTarget.dataset.storenums == '0') {
+      wx.showToast({
+        title: '库存不足'
+      });
+    } else {
+      app.globalData.reloadBox = true;
+      app.globalData.box.push(e.currentTarget.dataset.id);
+      wx.setStorageSync('box', app.globalData.box);
+      wx.showToast({
+        title: '已加入书包'
+      });
+    }
   }
+  
 })

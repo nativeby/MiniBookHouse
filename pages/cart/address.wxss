@@ -18,7 +18,7 @@
   -webkit-display: flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: left;
-  width: 100%;
+  max-width: 100%;
   font-size: 28rpx;
   text-align: left;
   align-items: center;
