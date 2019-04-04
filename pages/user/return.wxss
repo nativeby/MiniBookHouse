@@ -1,0 +1,237 @@
+/* pages/cart/box.wxss */
+@import '../../pages/templates/dataEmptyTemplate.wxss';
+@import '../../pages/home.wxss';
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+}
+
+.joinMembership {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color:#cb8cc5;
+}
+
+.joinMembership text {
+  width: 100%;
+  font-size: 32rpx;
+  color: red;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.joinMembership .button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  width: 200rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: white;
+  text-align: center;
+  border-radius: 30rpx;
+  background: linear-gradient(to right, orange, rgb(255, 115, 0));
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.membership {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #cb8cc5;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.membership text {
+  width: 100%;
+  font-size: 32rpx;
+  color: red;
+  text-align: left;
+  margin-left: 60rpx;
+}
+
+.address {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  width: 100%;
+  min-height: 80rpx;
+  align-items: center;
+}
+
+.address view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  max-width: 95%;
+  /* margin-top: 20rpx; */
+}
+
+.address text {
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #696969;
+}
+
+.address .rightImage {
+  position: absolute;
+  right: 10rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.boxList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.boxList .boxItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #696969;
+  margin-top: 20rpx;
+}
+
+.boxList .boxItem .one {
+  width: 6%;
+  height: 100%;
+}
+
+.boxList .boxItem .two {
+  width: 20%;
+  height: 100%;
+  padding-left: 30rpx;
+}
+
+.boxList .boxItem .two image {
+  border: 1px solid #ecf0f1;
+  border-radius: 10rpx;
+}
+
+.boxList .boxItem .three {
+  width: 64%;
+  height: 100%;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.boxList .boxItem .four {
+  width: 10%;
+  height: 100%;
+}
+
+.boxList .boxItem image {
+  width: 100%;
+}
+
+.itemUnSelected {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  /* border: 2rpx solid #696969; */
+}
+
+.itemSelected {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  /* background-color: red; */
+}
+
+.down {
+  margin: 30rpx;
+}
+
+.down button {
+  background-color: #fff;
+  color: red;
+  font-size: 24rpx;
+  width: 200rpx;
+  height: 55rpx;
+  margin-top: 20rpx;
+}
+
+.bottom-flex {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.bottom-flex .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  -webkit-display: flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: left;
+  align-items: center;
+  height: 80rpx;
+}
+
+.bottom-flex .content text {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.bottom-flex button {
+  position: absolute;
+  right: 30rpx;
+  background-color: red;
+  color: #fff;
+  width: 25%;
+  font-size: 30rpx;
+  height: 80rpx;
+}
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 2rpx;
+}

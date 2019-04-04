@@ -113,16 +113,26 @@ Page({
   addToBox: function() {
     if (this.data.goodsInfo.store_nums == '0') {
       wx.showToast({
-        title: '库存不足'
+        title: '库存不足换本图书吧~',
+        icon: 'none'
       });
-    } else {
-      app.globalData.reloadBox = true;
-      app.globalData.box.push(this.data.goodsID);
-      wx.setStorageSync('box', app.globalData.box);
-      wx.showToast({
-        title: '已加入书包'
-      });
+      return;
     }
+
+    if (app.globalData.box.indexOf(this.data.goodsID) >= 0) {
+      wx.showToast({
+        title: '书包中已经有此图书~',
+        icon: 'none'
+      });
+      return;
+    }
+
+    app.globalData.reloadBox = true;
+    app.globalData.box.push(this.data.goodsID);
+    wx.setStorageSync('box', app.globalData.box);
+    wx.showToast({
+      title: '已加入书包~'
+    });
   }
 
 })
