@@ -99,7 +99,7 @@ Page({
           var pageEmpty = false;
           var pageEnd = false;
 
-          if (result.length == 0 && _this.data.takeSelfList.length == 0) {
+          if (result.length == 0) {
             pageEmpty = true;
           } else if (result.length > 0) {
             page = page + 1;
