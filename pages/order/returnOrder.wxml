@@ -4,8 +4,8 @@
   <view class='orderList'>
     <view wx:for="{{orderList}}" wx:key="orderList" class="orderListItem">
       <text>订单编号：{{item.order_no}}</text>
+      <text>下单时间：{{item.create_time}}</text>
       <text>自提点：{{item.address}}</text>
-      <text>创建时间：{{item.create_time}}</text>
       <text>订单状态：{{item.status_txt}}</text>
       <text>绘本：</text>
       <block wx:for="{{item.goods_info}}" wx:key="subList" wx:for-index="subIndex" wx:for-item="subItem">
