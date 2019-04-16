@@ -33,7 +33,6 @@ App({
         _this.globalData.windowHeight = res.windowHeight;
 
         //model中包含着设备信息
-        console.log(res.model)
         var model = res.model
         if (model.search('iPhone X') != -1) {
           _this.globalData.isIPhoneX = true;
@@ -70,4 +69,5 @@ App({
       }
     });
   }
+  
 });

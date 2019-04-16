@@ -1,4 +1,4 @@
-// pages/cart/box.js
+// pages/user/return.js
 const app = getApp();
 
 Page({
@@ -61,8 +61,7 @@ Page({
     if (!uid || uid.length == 0) {
       wx.redirectTo({
         url: '/pages/authorize'
-      })
-
+      });
       return;
     }
 
@@ -70,11 +69,8 @@ Page({
       selectedAddress: app.globalData.selectedAddress
     });
 
-    if (app.globalData.reloadReturnBox) {
-      this.getPendingReturnBooks();
-      app.globalData.reloadReturnBox = false;
-    }
-    
+    this.getPendingReturnBooks();
+
   },
 
   /**
@@ -95,7 +91,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getPendingReturnBooks();
   },
 
   /**
@@ -114,12 +110,11 @@ Page({
 
   selectAddress: function (e) {
     wx.navigateTo({
-      url: '/pages/cart/address?from=return'
+      url: '/pages/cart/address'
     })
   },
 
   getPendingReturnBooks: function () {
-
     let _this = this;
     let uid = wx.getStorageSync('loginUserInfo').id;
 
@@ -239,24 +234,20 @@ Page({
 
     for (let i = 0; i < _this.data.boxList.length; i++) {
       if (_this.data.boxList[i].selected) {
-        let ogObj = {
-          id: _this.data.boxList[i].id,
-          order_id: _this.data.boxList[i].order_id,
-          goods_id: _this.data.boxList[i].goods_id
-        }
-        _this.data.selectedBoxList.push(ogObj);
+        // let ogObj = {
+        //   id: _this.data.boxList[i].id,
+        //   order_id: _this.data.boxList[i].order_id,
+        //   goods_id: _this.data.boxList[i].goods_id
+        // }
+        // _this.data.selectedBoxList.push(ogObj);
         // _this.data.selectedBoxList.push(_this.data.boxList[i]);
+        _this.data.selectedBoxList.push(_this.data.boxList[i].id); //tb_order_goods表的id
         _this.data.selectedIndexList.push(i);
       }
     }
 
-    let ogids = [];
-    for (let i = 0; i < _this.data.selectedBoxList.length; i++){
-      ogids.push(_this.data.selectedBoxList[i])
-    }
-
-    console.log(ogids);
-    if (ogids.length == 0) {
+    let ogid = _this.data.selectedBoxList.toString();
+    if (ogid.length == 0) {
       wx.showToast({
         title: '请重新选择图书~',
         icon: 'none'
@@ -271,7 +262,7 @@ Page({
       data: {
         uid: uid,
         aid: aid,
-        ogids: ogids
+        ogid: ogid
       },
       success(res) {
 

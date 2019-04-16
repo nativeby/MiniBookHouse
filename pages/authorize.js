@@ -37,7 +37,8 @@ Page({
             data: {
               code: res.code,
               nickname: app.globalData.userInfo.nickName,
-              avatar: app.globalData.userInfo.avatarUrl
+              avatar: app.globalData.userInfo.avatarUrl,
+              gender: app.globalData.userInfo.gender
             },
             success(res) {
               if (res.data.code == 200) {

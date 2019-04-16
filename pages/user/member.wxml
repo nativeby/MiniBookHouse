@@ -1,0 +1,46 @@
+<!--pages/user/member.wxml-->
+<view class='paymentContent'>
+  <view class='section1'>
+    <image class='desc' src='/static/img/vip_200.png' mode='widthFix' />
+  </view>
+  <view class='section2'>
+    <view></view>
+    <view class='vipItems'>
+      <view class='vipSubItems'>
+        <image src='/static/img/pay_vip_item.png' mode='scaleFill' />
+        <view class='item'>
+          <text class='text1'>海量书库任你选</text>
+          <text class='text2'>馆内拥有上万册中英文原版、点读绘本，你想读的，这里都有</text>
+        </view>
+      </view>
+      <view class='vipSubItems'>
+        <image src='/static/img/pay_vip_item.png' mode='scaleFill' />
+        <view class='item'>
+          <text class='text1'>VIP无限次借阅</text>
+          <text class='text2'>会员卡有效期内可无限次借阅馆内书籍</text>
+        </view>
+      </view>
+      <view class='vipSubItems'>
+        <image src='/static/img/pay_vip_item.png' mode='scaleFill' />
+        <view class='item'>
+          <text class='text1'>次日配送至自提点</text>
+          <text class='text2'>在线下单后，配送员次日把绘本送到离您最近的取书点</text>
+        </view>
+      </view>
+      <view class='vipSubItems'>
+        <image src='/static/img/pay_vip_item.png' mode='scaleFill' />
+        <view class='item'>
+          <text class='text1'>闲置绘本兑换会籍期限</text>
+          <text class='text2'>在家闲置的绘本，不仅能够重新利用，发挥价值，还能换取会籍期限</text>
+        </view>
+      </view>
+      <view class='vipSubItems'>
+        <image src='/static/img/pay_vip_item.png' mode='scaleFill' />
+        <view class='item'>
+          <text class='text1'>VIP尊享推荐购书权益</text>
+          <text class='text2'>平台会根据会员的推荐进行定向采购</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

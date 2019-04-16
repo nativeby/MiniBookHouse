@@ -6,7 +6,7 @@
     "pages/user",
     "pages/cart/balance",
     "pages/user/address",
-    "pages/user/contact",
+    "pages/user/member",
     "pages/user/about",
     "pages/user/return",
     "pages/common/auth",

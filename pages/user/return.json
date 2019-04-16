@@ -2,5 +2,6 @@
   "navigationBarTitleText": "还书",
   "navigationBarBackgroundColor": "#f9f9f9",
   "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
   "usingComponents": {}
 }

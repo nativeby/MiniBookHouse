@@ -1,3 +1,6 @@
 {
+  "navigationBarTitleText": "借书订单",
+  "navigationBarBackgroundColor": "#f9f9f9",
+  "navigationBarTextStyle": "black",
   "usingComponents": {}
 }

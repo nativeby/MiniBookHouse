@@ -4,32 +4,45 @@
   <text>{{userInfo.nickName}}</text>
 </view>
 <view class="list">
-  <view class="item" bindtap="openOrrowingOrder" data-page="/pages/user/order">
+
+  <view class="item" bindtap="openThis" data-page="/pages/order/orrowingOrder">
     <view style="float:left;">
       <image src="../static/img/order.png" style="width:25px;height:25px;" />
     </view>
     <view style="float:left;" class="t">借书订单</view>
     <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
   </view>
-  <view class="item" bindtap="openReturnOrder" data-page="/pages/user/address">
+
+  <view class="item" bindtap="openThis" data-page="/pages/order/returnOrder">
     <view style="float:left;">
       <image src="../static/img/address.png" style="width:25px;height:25px;" />
     </view>
     <view style="float:left;" class="t">还书订单</view>
     <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
   </view>
-  <view class="item" bindtap="openMyMember" data-page="/pages/user/contact">
+
+  <view class="item" bindtap="openThis" data-page="/pages/user/return">
+    <view style="float:left;">
+      <image src="../static/img/order.png" style="width:25px;height:25px;" />
+    </view>
+    <view style="float:left;" class="t">还书</view>
+    <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
+  </view>
+
+  <view class="item" bindtap="openThis" data-page="/pages/user/member">
     <view style="float:left;">
       <image src="../static/img/contact.png" style="width:25px;height:25px;" />
     </view>
     <view style="float:left;" class="t">我的会员</view>
     <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
   </view>
-  <view class="item" bindtap="call" data-page="/pages/user/about">
+
+  <view class="item" bindtap="openThis" data-page="/pages/common/contactInfo">
     <view style="float:left;">
       <image src="../static/img/about.png" style="width:25px;height:25px;" />
     </view>
     <view style="float:left;" class="t">联系客服</view>
     <image class='rightImage' src="/static/img/btn_right.png" mode="aspectFit" />
   </view>
+
 </view>

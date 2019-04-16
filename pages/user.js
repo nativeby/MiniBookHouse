@@ -79,28 +79,10 @@ Page({
 
   },
 
-  openOrrowingOrder: function(e) {
+  openThis: function (e) {
     wx.navigateTo({
-      url: '/pages/order/orrowingOrder'
-    });
-  },
-
-  openReturnOrder: function(e) {
-    wx.navigateTo({
-      url: '/pages/order/returnOrder'
-    });
-  },
-
-  openMyMember: function(e) {
-    // wx.navigateTo({
-    //   url: '/pages/order/orrowingOrder'
-    // });
-  },
-
-  call: function(e) {
-    wx.navigateTo({
-      url: '/pages/common/contactInfo'
-    });
+      url: e.currentTarget.dataset.page,
+    })
   }
 
 });

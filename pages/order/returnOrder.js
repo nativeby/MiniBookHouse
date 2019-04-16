@@ -83,11 +83,10 @@ Page({
     let _this = this;
     wx.showNavigationBarLoading();
     wx.request({
-      url: app.globalData.baseApi + "outer/getOrderList",
+      url: app.globalData.baseApi + "outer/getReturnOrderList",
       method: "GET",
       data: {
         uid: _this.data.uid,
-        tag: "r"
       },
       success(res) {
         if (res.data.code == 200) {
