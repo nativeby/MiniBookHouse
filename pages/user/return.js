@@ -9,7 +9,9 @@ Page({
   data: {
     scrollViewHeight: 0,
     pageBottom: app.globalData.pageBottom,
+    pageIndex: 1,
     pageEmpty: false,
+    pageEnd: false,
     selectedAddress: {
       id: '',
       name: '',
@@ -129,8 +131,9 @@ Page({
         if (res.data.code == 200) {
 
           var result = res.data.data.result;
+          var pageEmpty = false;
 
-          if (result.length == 0 && _this.data.takeSelfList.length == 0) {
+          if (result.length == 0) {
             pageEmpty = true;
           }
 
@@ -142,6 +145,7 @@ Page({
             boxList: result,
             selectedCount: 0,
             selectedAll: false,
+            pageEmpty: pageEmpty,
           });
         }
       },
