@@ -60,5 +60,6 @@
         "selectedIconPath": "/static/img/user_02.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
