@@ -56,3 +56,9 @@
   </view>
 
 </view>
+<modal id="modal" hidden="{{hiddenmodalput}}" title="绑定手机号" confirm-text="提交" cancel-text="取消" bindconfirm="confirmDig" bindcancel="cancelDig"> 
+  <text>手机号主要用来发货及退款时的校验！</text>
+  <view class='toast-input'>
+    <input type='number' placeholder="请输入手机号" bindinput ="mobileInput"/>
+  </view>
+</modal>

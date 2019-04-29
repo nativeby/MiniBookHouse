@@ -15,6 +15,8 @@ Page({
     isValid: 0,
     vipDateFrom: '',
     vipDateTo: '',
+    tmpMobile: '',
+    mobile: '',
     selectedAddress: {
       id: '',
       name: '',
@@ -26,7 +28,8 @@ Page({
     selectedIndexList: [],
     selectedCount: 0,
     selectedAll: false,
-    totalPrice: 0
+    totalPrice: 0,
+    hiddenmodalput: true
   },
 
   /**
@@ -158,7 +161,8 @@ Page({
             maxBorrowBooks: res.data.data.result.max_borrow_books,
             isValid: res.data.data.result.is_valid,
             vipDateFrom: res.data.data.result.vip_date_from,
-            vipDateTo: res.data.data.result.vip_date_to
+            vipDateTo: res.data.data.result.vip_date_to,
+            mobile: res.data.data.result.mobile
           });
         }
       },
@@ -339,6 +343,14 @@ Page({
       return;
     }
 
+    let mobile = _this.data.mobile;
+    if (mobile.length == 0) {
+      this.setData({
+        hiddenmodalput: !this.data.hiddenmodalput
+      });
+      return;
+    }
+
     let aid = _this.data.selectedAddress.id;
     if (aid.length == 0) {
       wx.showToast({
@@ -441,6 +453,54 @@ Page({
       }
     });
 
+  },
+
+  //获取用户输入的手机号
+  mobileInput: function (e) {
+    let _this = this;
+
+    _this.setData({
+      tmpMobile: e.detail.value
+    })
+  },
+  //取消按钮  
+  cancelDig: function () {
+    let _this = this;
+
+    _this.setData({
+      hiddenmodalput: true
+    });
+  },
+  //确认  
+  confirmDig: function () {
+    let _this = this;
+
+    let uid = wx.getStorageSync('loginUserInfo').id;
+
+    wx.request({
+      url: app.globalData.baseApi + "outer/bindMobile",
+      method: "GET",
+      data: {
+        uid: uid,
+        mobile: _this.data.tmpMobile
+      },
+      success(res) {
+        if (res.data.code == 200) {
+          _this.setData({
+            mobile: res.data.data.result.mobile,
+            hiddenmodalput: true
+          });
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          });
+        }
+      },
+      complete() {
+        
+      }
+    });
   }
 
 })
